@@ -111,13 +111,13 @@ const CGFloat viewHeight = 50;
     CGPoint coordinatesOfTouch = [self pointForCurrentViewWithTouch:touches];
     NSLog(@"Touches Moved at: %f %f", coordinatesOfTouch.x, coordinatesOfTouch.y);
     
-    CGPoint newPosition = mySquare.frame.origin;
-    newPosition.x = coordinatesOfTouch.x - 25;
-    newPosition.y = coordinatesOfTouch.y - 25;
-    
-    CGRect newFrame = mySquare.frame;
-    newFrame.origin = newPosition;
-    mySquare.frame = newFrame;
+//    CGPoint newPosition = mySquare.frame.origin;
+//    newPosition.x = coordinatesOfTouch.x - 25;
+//    newPosition.y = coordinatesOfTouch.y - 25;
+//    
+//    CGRect newFrame = mySquare.frame;
+//    newFrame.origin = newPosition;
+//    mySquare.frame = newFrame;
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

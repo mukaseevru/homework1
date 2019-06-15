@@ -34,15 +34,15 @@
 {
     CGPoint coordinatesOfTouch = [self pointForCurrentViewWithTouch:touches];
     NSLog(@"Я подвигал внутри вьюшки и получил ЭТО: %f %f", coordinatesOfTouch.x, coordinatesOfTouch.y);
-//    NSLog(@"Bounds: %f %f", self.bounds.origin.x, self.bounds.origin.y);
-//    
-//    CGPoint newPosition = self.frame.origin;
-//    newPosition.x = coordinatesOfTouch.x;
-//    newPosition.y = coordinatesOfTouch.y;
-//
-//    CGRect newFrame = self.bounds;
-//    newFrame.origin = newPosition;
-//    self.frame = newFrame;
+    NSLog(@"Bounds: %f %f", self.bounds.origin.x, self.bounds.origin.y);
+    
+    CGPoint newPosition = self.frame.origin;
+    newPosition.x = coordinatesOfTouch.x;
+    newPosition.y = coordinatesOfTouch.y;
+
+    CGRect newFrame = self.bounds;
+    newFrame.origin = newPosition;
+    self.frame = newFrame;
     
 }
 
@@ -56,7 +56,8 @@
 - (CGPoint)pointForCurrentViewWithTouch:(NSSet<UITouch *> *)touches
 {
     UITouch *currentTouch = touches.anyObject;
-    return [currentTouch locationInView:self];
+    return [currentTouch locationInView:self.superview];
 }
 
 @end
+
